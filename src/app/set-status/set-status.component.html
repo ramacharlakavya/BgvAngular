@@ -1,0 +1,43 @@
+
+<head>
+  <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+       <div class="row">
+         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+           <div class="card card-signin my-5">
+             <div class="card-body">
+              <form class="form-signin">
+                <div class="form-label-group">
+                 
+
+
+                  <label for="uname"><strong>verfId:</strong></label>
+                  <input type="number" name="empId" [(ngModel)]="verification.verfId" #verfIdRef='ngModel' class="form-group" class="form-control"  placeholder="Enter LoginId" required autofocus >
+                  <div *ngIf='verfIdRef.errors && verfIdRef.touched' class="alert alert-danger">
+                    <div [hidden]='!verfIdRef.errors.required'> Please provide the UserId</div>
+                     </div>
+                  </div>
+
+            
+            <br>
+                <div class="form-label-group">
+                  <label for="pwd"><strong>Status:</strong></label>
+                  <input type="text" name="status" minlength="6" [(ngModel)]="verification.status" #statusval='ngModel'class="form-control" placeholder="set the status" required/><br><br>
+                  <div *ngIf='statusval.errors && statusval.touched' class="alert alert-danger">
+                    <div [hidden]='!statusval.errors.required'>Please provide the status </div>
+                   </div>
+                </div>
+                
+
+                <button type="submit" class="btn btn-primary" (click)="status()">Submit</button>
+                <h4 align="center">{{message}}</h4>
+        
+              </form>
+            </div></div></div></div></div>
+            
+               </body>
+  
