@@ -27,13 +27,23 @@ export class LoginComponent implements OnInit {
   }
   fetchEmployee()
   {
-    this.service.getlogindetails(this.empId,this.password).subscribe((data)=>{
+    this.service.getlogindetails(this.empId,this.password).subscribe((data:any)=>{this.login_details=data
+      console.log(data);
+      if(this.login_details==null){
+        alert("login unsuccess");
+        this.check1=true;
+        this.check=false;
+      }
+      else{
+        alert("login success");
+        this.check1=false;
+        this.check=true;
+
+      
       this.router.navigate(['app-login-sucess'])
       
-    },
-    error=>{
-      this.msg="check your login details"
     }
-    )
+    
+      }  );
   }
   }

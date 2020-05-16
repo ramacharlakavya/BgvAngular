@@ -22,7 +22,7 @@ export class EmployeeDocumentDto
     this.empId = empId;
     this.docId = docId;
     this.docType = docType;
-    this.docData=docData;;
+    this.docData=docData;
     this.empName=empName;
 }
 }
@@ -49,24 +49,24 @@ export class BackgroundService {
   verification:VerificationDto;
   public getlogindetails(empId:number,password:string){
     
-    return this.http.get("http://localhost:4944/bgv/login/"+empId+"/"+password);//,{responseType: 'json'});
+    return this.http.get("http://localhost:4945/bgv/login/"+empId+"/"+password);//,{responseType: 'json'});
   
   }
   public getdocumentbyid(empId:number){
   
-return this.http.get<EmployeeDocumentDto>("http://localhost:4944/bgv/getdocumentbyid/"+empId);//,{responseType: 'json'});
+return this.http.get<EmployeeDocumentDto>("http://localhost:4945/bgv/getdocumentbyid/"+empId);//,{responseType: 'json'});
   
   }
   public getdocumentbyname(empName:string){
     
-    return this.http.get("http://localhost:4944/bgv/getdocumentbyname/"+empName,{responseType: 'json'});
+    return this.http.get("http://localhost:4945/bgv/getdocumentbyname/"+empName,{responseType: 'json'});
   
   }
   
   
   public setstatus(verf){
     console.log(verf);
-    return this.http.put("http://localhost:4944/bgv/setstatus",verf,{responseType: 'text'});
+    return this.http.put("http://localhost:4945/bgv/setstatus",verf,{responseType: 'text'});
   }
 
 
